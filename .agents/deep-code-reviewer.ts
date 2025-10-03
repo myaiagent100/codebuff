@@ -5,7 +5,7 @@ const definition: AgentDefinition = {
   id: 'deep-code-reviewer',
   publisher,
   displayName: 'Deep Code Reviewer',
-  model: 'anthropic/claude-sonnet-4',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
 
   includeMessageHistory: false,
 

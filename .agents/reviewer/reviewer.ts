@@ -6,7 +6,7 @@ import type { SecretAgentDefinition } from '../types/secret-agent-definition'
 const definition: SecretAgentDefinition = {
   id: 'reviewer',
   publisher,
-  ...reviewer('google/gemini-2.5-pro'),
+  ...reviewer(process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder'),
   reasoningOptions: {
     effort: 'low',
     exclude: true,

@@ -134,34 +134,8 @@ export const getModelForMode = (
   costMode: CostMode,
   operation: 'agent' | 'file-requests' | 'check-new-files',
 ) => {
-  if (operation === 'agent') {
-    return {
-      lite: models.openrouter_gemini2_5_flash,
-      normal: models.openrouter_claude_sonnet_4,
-      max: models.openrouter_claude_sonnet_4,
-      experimental: models.openrouter_gemini2_5_pro_preview,
-      ask: models.openrouter_gemini2_5_pro_preview,
-    }[costMode]
-  }
-  if (operation === 'file-requests') {
-    return {
-      lite: models.openrouter_claude_3_5_haiku,
-      normal: models.openrouter_claude_3_5_haiku,
-      max: models.openrouter_claude_sonnet_4,
-      experimental: models.openrouter_claude_sonnet_4,
-      ask: models.openrouter_claude_3_5_haiku,
-    }[costMode]
-  }
-  if (operation === 'check-new-files') {
-    return {
-      lite: models.openrouter_claude_3_5_haiku,
-      normal: models.openrouter_claude_sonnet_4,
-      max: models.openrouter_claude_sonnet_4,
-      experimental: models.openrouter_claude_sonnet_4,
-      ask: models.openrouter_claude_sonnet_4,
-    }[costMode]
-  }
-  throw new Error(`Unknown operation: ${operation}`)
+  // Use DEFAULT_MODEL from environment or fall back to qwen3-coder (LiteLLM setup)
+  return process.env.DEFAULT_MODEL || models.openrouter_qwen3_coder
 }
 
 // export const claudeModels = {
@@ -194,6 +168,7 @@ export const geminiModels = {
 export type GeminiModel = (typeof geminiModels)[keyof typeof geminiModels]
 
 export const openrouterModels = {
+  openrouter_qwen3_coder: 'openrouter/qwen/qwen3-coder',
   openrouter_claude_sonnet_4_5: 'anthropic/claude-sonnet-4.5',
   openrouter_claude_sonnet_4: 'anthropic/claude-4-sonnet-20250522',
   openrouter_claude_opus_4: 'anthropic/claude-opus-4.1',

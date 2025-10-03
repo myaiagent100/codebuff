@@ -6,7 +6,7 @@ import type { SecretAgentDefinition } from './types/secret-agent-definition'
 const definition: SecretAgentDefinition = {
   id: 'ask',
   publisher,
-  ...askFactory('openai/gpt-5'),
+  ...askFactory(process.env.DEFAULT_MODEL),
 }
 
 export default definition

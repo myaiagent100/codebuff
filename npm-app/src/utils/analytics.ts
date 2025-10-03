@@ -30,9 +30,8 @@ export function initAnalytics() {
     !process.env.NEXT_PUBLIC_POSTHOG_API_KEY ||
     !process.env.NEXT_PUBLIC_POSTHOG_HOST_URL
   ) {
-    throw new Error(
-      'NEXT_PUBLIC_POSTHOG_API_KEY or NEXT_PUBLIC_POSTHOG_HOST_URL is not set',
-    )
+    // Skip analytics initialization if env vars not set (e.g. local dev)
+    return
   }
 
   client = new PostHog(process.env.NEXT_PUBLIC_POSTHOG_API_KEY, {
@@ -94,7 +93,8 @@ export function identifyUser(userId: string, properties?: Record<string, any>) {
   currentUserId = userId
 
   if (!client) {
-    throw new Error('Analytics client not initialized')
+    // Skip if analytics not initialized (e.g. local dev)
+    return
   }
 
   if (process.env.NEXT_PUBLIC_CB_ENVIRONMENT !== 'prod') {

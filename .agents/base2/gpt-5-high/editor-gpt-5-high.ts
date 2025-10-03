@@ -5,7 +5,7 @@ import type { SecretAgentDefinition } from '../../types/secret-agent-definition'
 const definition: SecretAgentDefinition = {
   ...editor,
   id: 'editor-gpt-5-high',
-  model: 'openai/gpt-5',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   reasoningOptions: {
     enabled: true,
     effort: 'high',

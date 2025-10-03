@@ -7,7 +7,7 @@ import {
 const definition: SecretAgentDefinition = {
   id: 'plan-selector',
   publisher,
-  model: 'anthropic/claude-sonnet-4.5',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   displayName: 'Plan Selector',
   spawnerPrompt:
     'Expert at evaluating and selecting the best plan from multiple options based on quality, feasibility, and simplicity.',

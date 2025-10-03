@@ -5,7 +5,7 @@ const definition: AgentDefinition = {
   id: 'gpt5-thinker',
   displayName: 'GPT-5 Quick Thinker',
   publisher,
-  model: 'openai/gpt-5',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   reasoningOptions: {
     enabled: true,
     effort: 'low',

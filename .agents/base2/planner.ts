@@ -3,7 +3,7 @@ import { plannerFactory } from './planner-factory'
 
 const definition: SecretAgentDefinition = {
   id: 'planner',
-  ...plannerFactory('openai/gpt-5-chat'),
+  ...plannerFactory(process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder'),
 }
 
 export default definition

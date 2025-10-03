@@ -22,7 +22,7 @@ const fileExplorer: SecretAgentDefinition = {
   displayName: 'Dora the File Explorer',
   spawnerPrompt:
     'Comprehensively explores the codebase and reports back on the results',
-  model: 'anthropic/claude-4-sonnet-20250522',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   publisher,
   outputMode: 'structured_output',
   includeMessageHistory: false,

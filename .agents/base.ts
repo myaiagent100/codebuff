@@ -6,7 +6,7 @@ import type { SecretAgentDefinition } from './types/secret-agent-definition'
 const definition: SecretAgentDefinition = {
   id: 'base',
   publisher,
-  ...base('anthropic/claude-sonnet-4.5', 'normal'),
+  ...base(process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder', 'normal'),
 }
 
 export default definition

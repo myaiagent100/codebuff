@@ -10,7 +10,7 @@ import type { AgentDefinition } from '../types/agent-definition'
 const agent: AgentDefinition = {
   id: 'load-agent',
   displayName: 'Load Agent',
-  model: 'anthropic/claude-4-sonnet-20250522',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   outputMode: 'last_message',
   includeMessageHistory: false,
   publisher: 'brandon',

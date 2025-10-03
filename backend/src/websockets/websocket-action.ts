@@ -23,6 +23,7 @@ import { mainPrompt } from '../main-prompt'
 import { protec } from './middleware'
 import { sendMessage } from './server'
 import { assembleLocalAgentTemplates } from '../templates/agent-registry'
+import { getCachedBaseAgents } from '../templates/load-base-agents'
 import { logger, withLoggerContext } from '../util/logger'
 
 import type {
@@ -207,9 +208,12 @@ export const callMainPrompt = async (
   action.sessionState.mainAgentState.creditsUsed = 0
   action.sessionState.mainAgentState.directCreditsUsed = 0
 
-  // Assemble local agent templates from fileContext
+  // Load base agents from Codebuff directory
+  const baseAgents = getCachedBaseAgents()
+
+  // Assemble local agent templates from fileContext + base agents
   const { agentTemplates: localAgentTemplates, validationErrors } =
-    assembleLocalAgentTemplates(fileContext)
+    assembleLocalAgentTemplates(fileContext, baseAgents)
 
   if (validationErrors.length > 0) {
     sendAction(ws, {

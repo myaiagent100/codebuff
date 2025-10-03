@@ -8,7 +8,7 @@ const definition: AgentDefinition = {
   id: 'context-pruner',
   publisher,
   displayName: 'Context Pruner',
-  model: 'openai/gpt-5-mini',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
 
   toolNames: ['set_messages'],
 

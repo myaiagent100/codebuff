@@ -5,7 +5,7 @@ const definition: AgentDefinition = {
   id: 'sonnet-thinker',
   displayName: 'Claude Sonnet Deep Thinker',
   publisher,
-  model: 'anthropic/claude-4-sonnet-20250522',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
 
   inputSchema: {
     prompt: {

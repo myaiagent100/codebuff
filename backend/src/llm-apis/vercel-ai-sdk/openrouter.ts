@@ -7,7 +7,7 @@ import { env } from '@codebuff/internal/env'
 export const openrouter = createOpenAI({
   name: 'openrouter',
   apiKey: env.OPEN_ROUTER_API_KEY,
-  baseURL: 'https://openrouter.ai/api/v1',
+  baseURL: env.LITELLM_BASE_URL,
   headers: {
     'HTTP-Referer': 'https://codebuff.com',
     'X-Title': 'Codebuff',

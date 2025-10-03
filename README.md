@@ -175,6 +175,33 @@ Some ways you can help:
 
 **Support**: [support@codebuff.com](mailto:support@codebuff.com)
 
+## Local Development Setup
+
+This repository is configured for local development with LiteLLM API. See detailed setup instructions:
+
+- **[SETUP_CHECKLIST.md](SETUP_CHECKLIST.md)** - Complete setup guide with prerequisites and troubleshooting
+- **[CHANGES_SUMMARY.md](CHANGES_SUMMARY.md)** - Summary of LiteLLM integration changes
+
+### Quick Start for Local Development
+
+```bash
+# 1. Clone and setup
+git clone <repository-url>
+cd codebuff
+./setup.sh
+
+# 2. Edit .env and set your LiteLLM API key
+nano .env
+
+# 3. Start backend (Terminal 1)
+./start-backend.sh
+
+# 4. Start CLI (Terminal 2)
+./start-cli.sh
+```
+
+See [SETUP_CHECKLIST.md](SETUP_CHECKLIST.md) for complete setup instructions.
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=CodebuffAI/codebuff&type=Date)](https://www.star-history.com/#CodebuffAI/codebuff&Date)

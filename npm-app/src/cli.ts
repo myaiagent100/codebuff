@@ -1451,7 +1451,12 @@ export class CLI {
   }
 
   private handleEscKey() {
-    if (this.isReceivingResponse) {
+    // Always try to stop response when ESC is pressed
+    // This is more reliable than checking the flag
+    const client = Client.getInstance()
+    const hasActiveInput = client.userInputId !== null
+
+    if (this.isReceivingResponse || hasActiveInput) {
       this.handleStopResponse()
     }
   }

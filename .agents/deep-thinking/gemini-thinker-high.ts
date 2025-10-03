@@ -5,7 +5,7 @@ const definition: AgentDefinition = {
   id: 'gemini-thinker-high',
   displayName: 'Gemini Pro High Thinker',
   publisher,
-  model: 'google/gemini-2.5-pro',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   reasoningOptions: {
     enabled: true,
     effort: 'high',

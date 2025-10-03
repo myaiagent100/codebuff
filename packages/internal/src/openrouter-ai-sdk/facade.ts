@@ -39,7 +39,8 @@ Custom headers to include in the requests.
   constructor(options: OpenRouterProviderSettings = {}) {
     this.baseURL =
       withoutTrailingSlash(options.baseURL ?? options.baseUrl) ??
-      'https://openrouter.ai/api/v1';
+      process.env.LITELLM_BASE_URL ??
+      'https://your-litellm-server.example.com/v1';
     this.apiKey = options.apiKey;
     this.headers = options.headers;
   }

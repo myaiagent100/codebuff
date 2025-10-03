@@ -6,7 +6,7 @@ const definition: AgentDefinition = {
   id: 'knowledge-keeper',
   publisher,
   displayName: 'Kendra the Knowledge Keeper',
-  model: 'anthropic/claude-4-sonnet-20250522',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   toolNames: [
     'read_files',
     'write_file',

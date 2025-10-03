@@ -6,7 +6,7 @@ import type { SecretAgentDefinition } from './types/secret-agent-definition.ts'
 const definition: SecretAgentDefinition = {
   id: 'base-lite',
   publisher,
-  ...base('openai/gpt-5', 'lite'),
+  ...base(process.env.DEFAULT_MODEL, 'lite'),
   reasoningOptions: {
     enabled: true,
     effort: 'medium',

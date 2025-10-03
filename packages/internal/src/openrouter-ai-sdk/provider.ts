@@ -98,7 +98,8 @@ export function createOpenRouter(
 ): OpenRouterProvider {
   const baseURL =
     withoutTrailingSlash(options.baseURL ?? options.baseUrl) ??
-    'https://openrouter.ai/api/v1';
+    process.env.LITELLM_BASE_URL ??
+    'https://your-litellm-server.example.com/v1';
 
   // we default to compatible, because strict breaks providers like Groq:
   const compatibility = options.compatibility ?? 'compatible';

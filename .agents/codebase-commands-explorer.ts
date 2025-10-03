@@ -4,7 +4,7 @@ const definition: AgentDefinition = {
   id: 'codebase-commands-explorer',
   displayName: 'Codebase Commands Explorer',
   publisher: 'james',
-  model: 'openai/gpt-5',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   reasoningOptions: {
     enabled: true,
     effort: 'low',

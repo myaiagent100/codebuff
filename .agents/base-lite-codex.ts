@@ -7,7 +7,7 @@ const definition: SecretAgentDefinition = {
   ...baseLite,
   id: 'base-lite-codex',
   publisher,
-  model: 'openai/gpt-5-codex',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   reasoningOptions: {
     enabled: true,
     effort: 'medium',

@@ -4,7 +4,7 @@ const definition: AgentDefinition = {
   id: 'simple-code-reviewer',
   displayName: 'Simple Code Reviewer',
   publisher: 'james',
-  model: 'anthropic/claude-sonnet-4',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   toolNames: [
     'read_files',
     'code_search',

@@ -7,7 +7,7 @@ const definition: SecretAgentDefinition = {
   id: 'researcher-sonnet',
   publisher,
   displayName: 'Researcher Sonnet',
-  model: 'anthropic/claude-sonnet-4.5',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
 
   spawnableAgents: [
     'file-explorer',

@@ -4,7 +4,7 @@ import type { AgentDefinition } from './types/agent-definition'
 
 const definition: AgentDefinition = {
   id: 'creative-catalyst',
-  model: 'anthropic/claude-4-sonnet-20250522',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   displayName: 'Chloe the Creative Catalyst',
   publisher,
   spawnerPrompt:

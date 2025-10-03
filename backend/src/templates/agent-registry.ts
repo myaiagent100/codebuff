@@ -168,9 +168,12 @@ export async function getAgentTemplate(
 }
 
 /**
- * Assemble local agent templates from fileContext + static templates
+ * Assemble local agent templates from fileContext + static templates + base agents
  */
-export function assembleLocalAgentTemplates(fileContext: ProjectFileContext): {
+export function assembleLocalAgentTemplates(
+  fileContext: ProjectFileContext,
+  baseAgents: Record<string, AgentTemplate> = {},
+): {
   agentTemplates: Record<string, AgentTemplate>
   validationErrors: DynamicAgentValidationError[]
 } {
@@ -179,9 +182,9 @@ export function assembleLocalAgentTemplates(fileContext: ProjectFileContext): {
     fileContext.agentTemplates || {},
   )
 
-  // Use dynamic templates only
-
-  const agentTemplates = { ...dynamicTemplates }
+  // Merge base agents with dynamic templates
+  // Dynamic templates (from user project) take precedence over base agents
+  const agentTemplates = { ...baseAgents, ...dynamicTemplates }
   return { agentTemplates, validationErrors }
 }
 

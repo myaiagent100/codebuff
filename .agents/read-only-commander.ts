@@ -7,7 +7,7 @@ import {
 const readOnlyCommander: SecretAgentDefinition = {
   id: 'read-only-commander',
   publisher,
-  model: 'openai/gpt-5-chat',
+  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
   reasoningOptions: {
     enabled: true,
     effort: 'low',
