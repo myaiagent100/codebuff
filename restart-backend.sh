@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Codebuff Backend Restart - Root Wrapper
+# Codebuff Backend Restarter - Root Wrapper
 # This is a convenience wrapper to restart backend from repository root
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
