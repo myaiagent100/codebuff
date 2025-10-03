@@ -7,7 +7,7 @@ const definition: SecretAgentDefinition = {
   id: 'researcher-docs-sonnet',
   publisher,
   displayName: 'Docs Researcher Sonnet',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
 }
 
 export default definition

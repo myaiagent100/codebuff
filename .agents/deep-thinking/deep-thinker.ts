@@ -5,7 +5,7 @@ const definition: AgentDefinition = {
   id: 'deep-thinker',
   displayName: 'Deep Thinker Agent',
   publisher,
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   reasoningOptions: {
     enabled: true,
     effort: 'high',

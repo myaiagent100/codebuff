@@ -8,7 +8,7 @@ import {
 const editor: SecretAgentDefinition = {
   id: 'editor',
   publisher,
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   displayName: 'Code Editor',
   spawnerPrompt:
     'Expert code editor with access to tools to find and edit files, run terminal commands, and search the web. Can handle small to medium sized tasks, or work off of a plan for more complex tasks. For easy tasks, you can spawn this agent directly rather than invoking a scout or planner first.',

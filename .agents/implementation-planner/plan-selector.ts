@@ -7,7 +7,7 @@ import {
 const definition: SecretAgentDefinition = {
   id: 'plan-selector',
   publisher,
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   displayName: 'Plan Selector',
   spawnerPrompt:
     'Expert at evaluating and selecting the best plan from multiple options based on quality, feasibility, and simplicity.',

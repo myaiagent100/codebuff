@@ -6,7 +6,7 @@ const definition: AgentDefinition = {
   id: 'brainstormer',
   publisher,
   displayName: 'Brian the Brainstormer',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
 
   includeMessageHistory: true,
   inputSchema: {

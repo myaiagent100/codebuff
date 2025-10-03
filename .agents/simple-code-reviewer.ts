@@ -4,7 +4,7 @@ const definition: AgentDefinition = {
   id: 'simple-code-reviewer',
   displayName: 'Simple Code Reviewer',
   publisher: 'james',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   toolNames: [
     'read_files',
     'code_search',

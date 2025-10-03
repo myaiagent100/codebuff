@@ -7,7 +7,7 @@ import { publisher } from '../constants'
 const definition: SecretAgentDefinition = {
   id: 'scout',
   publisher,
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   displayName: 'Lewis & Clark',
   spawnableAgents: ['file-explorer', 'web-researcher', 'docs-researcher'],
   toolNames: ['spawn_agents', 'read_files', 'code_search', 'end_turn'],

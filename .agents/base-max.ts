@@ -6,7 +6,7 @@ import type { SecretAgentDefinition } from './types/secret-agent-definition'
 const definition: SecretAgentDefinition = {
   id: 'base-max',
   publisher,
-  ...base(process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder', 'max'),
+  ...base(process.env.DEFAULT_MODEL, 'max'),
   spawnableAgents: [
     'file-explorer',
     'researcher-web-sonnet',

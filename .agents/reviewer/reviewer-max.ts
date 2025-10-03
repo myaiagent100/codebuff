@@ -4,7 +4,7 @@ import { publisher } from '../constants'
 import type { SecretAgentDefinition } from '../types/secret-agent-definition'
 
 const definition: SecretAgentDefinition = {
-  ...reviewer(process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder'),
+  ...reviewer(process.env.DEFAULT_MODEL),
   id: 'reviewer-max',
   publisher,
 }

@@ -10,7 +10,7 @@ import type { AgentDefinition } from '../types/agent-definition'
 const agent: AgentDefinition = {
   id: 'load-agent',
   displayName: 'Load Agent',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   outputMode: 'last_message',
   includeMessageHistory: false,
   publisher: 'brandon',

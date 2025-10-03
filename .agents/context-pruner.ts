@@ -8,7 +8,7 @@ const definition: AgentDefinition = {
   id: 'context-pruner',
   publisher,
   displayName: 'Context Pruner',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
 
   toolNames: ['set_messages'],
 

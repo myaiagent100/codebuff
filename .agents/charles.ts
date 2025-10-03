@@ -13,7 +13,7 @@ const definition: AgentDefinition = {
   id: 'charles',
   publisher,
   displayName: 'Charles - Deep Sea Tuna Researcher',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
 
   // Tools for research, documentation, and analysis
   toolNames: [

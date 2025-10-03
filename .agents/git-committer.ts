@@ -8,7 +8,7 @@ import type {
 const definition: AgentDefinition = {
   id: 'git-committer',
   displayName: 'Mitt the Git Committer',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
 
   publisher,
   toolNames: ['read_files', 'run_terminal_command', 'add_message', 'end_turn'],

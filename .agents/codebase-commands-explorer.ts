@@ -4,7 +4,7 @@ const definition: AgentDefinition = {
   id: 'codebase-commands-explorer',
   displayName: 'Codebase Commands Explorer',
   publisher: 'james',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   reasoningOptions: {
     enabled: true,
     effort: 'low',

@@ -8,7 +8,7 @@ const definition: SecretAgentDefinition = {
   id: 'implementation-planner',
   displayName: 'Implementation Planner',
   publisher,
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   spawnerPrompt:
     'Creates comprehensive implementation plans with full code changes by exploring the codebase, doing research on the web, and thinking deeply. You can also use it get a deep answer to any question. Use this agent for tasks that require thinking.',
   inputSchema: {

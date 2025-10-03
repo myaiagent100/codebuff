@@ -10,7 +10,7 @@ import type { AgentDefinition, ToolCall } from '../types/agent-definition'
 const agent: AgentDefinition = {
   id: 'etl-manager',
   displayName: 'ETL Pipeline Manager',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   publisher: 'brandon',
 
   toolNames: ['spawn_agents', 'think_deeply', 'add_message'],

@@ -10,7 +10,7 @@ import type { AgentDefinition } from '../types/agent-definition'
 const agent: AgentDefinition = {
   id: 'transform-agent',
   displayName: 'Transform Agent',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   outputMode: 'structured_output',
   includeMessageHistory: false,
   publisher: 'brandon',

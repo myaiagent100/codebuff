@@ -6,7 +6,7 @@ const definition: AgentDefinition = {
   ...gpt5Thinker,
   id: 'thinker-gpt-5-high',
   displayName: 'GPT-5 Deep Thinker',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   reasoningOptions: {
     enabled: true,
     effort: 'high',

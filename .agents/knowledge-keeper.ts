@@ -6,7 +6,7 @@ const definition: AgentDefinition = {
   id: 'knowledge-keeper',
   publisher,
   displayName: 'Kendra the Knowledge Keeper',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   toolNames: [
     'read_files',
     'write_file',

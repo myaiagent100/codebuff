@@ -22,7 +22,7 @@ const fileExplorer: SecretAgentDefinition = {
   displayName: 'Dora the File Explorer',
   spawnerPrompt:
     'Comprehensively explores the codebase and reports back on the results',
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   publisher,
   outputMode: 'structured_output',
   includeMessageHistory: false,

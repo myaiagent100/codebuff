@@ -5,7 +5,7 @@ import type { AgentDefinition } from '../types/agent-definition'
 const definition: AgentDefinition = {
   id: 'oss-model-coder',
   publisher,
-  model: process.env.DEFAULT_MODEL || 'openrouter/qwen/qwen3-coder',
+  model: process.env.DEFAULT_MODEL,
   displayName: 'Casey the Coder',
   spawnerPrompt:
     'Expert coding agent for reliable code implementation, debugging, and refactoring with excellent tool calling capabilities.',
