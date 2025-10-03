@@ -103,6 +103,16 @@ export const promptAiSdkStream = async function* (
   }
   const startTime = Date.now()
 
+  logger.info(
+    {
+      model: options.model,
+      agentId: options.agentId,
+      userInputId: options.userInputId,
+      userId: options.userId,
+    },
+    'Starting AI SDK stream request',
+  )
+
   let aiSDKModel = modelToAiSDKModel(options.model)
 
   const response = streamText({
@@ -230,6 +240,23 @@ export const promptAiSdkStream = async function* (
   }
 
   const messageId = (await response.response).id
+
+  logger.info(
+    {
+      model: options.model,
+      agentId: options.agentId,
+      userInputId: options.userInputId,
+      messageId,
+      contentLength: content.length,
+      contentPreview: content.substring(0, 200),
+      inputTokens,
+      outputTokens,
+      cacheReadInputTokens,
+      cacheCreationInputTokens,
+    },
+    'AI SDK stream completed successfully',
+  )
+
   const creditsUsedPromise = saveMessage({
     messageId,
     userId: options.userId,
@@ -294,6 +321,17 @@ export const promptAiSdk = async function (
   }
 
   const startTime = Date.now()
+
+  logger.info(
+    {
+      model: options.model,
+      agentId: options.agentId,
+      userInputId: options.userInputId,
+      userId: options.userId,
+    },
+    'Starting AI SDK non-stream request',
+  )
+
   let aiSDKModel = modelToAiSDKModel(options.model)
 
   const response = await generateText({
@@ -303,7 +341,20 @@ export const promptAiSdk = async function (
   })
   const content = response.text
   const inputTokens = response.usage.inputTokens || 0
-  const outputTokens = response.usage.inputTokens || 0
+  const outputTokens = response.usage.outputTokens || 0
+
+  logger.info(
+    {
+      model: options.model,
+      agentId: options.agentId,
+      userInputId: options.userInputId,
+      contentLength: content.length,
+      contentPreview: content.substring(0, 200),
+      inputTokens,
+      outputTokens,
+    },
+    'AI SDK non-stream completed successfully',
+  )
 
   const creditsUsedPromise = saveMessage({
     messageId: generateCompactId(),
@@ -367,6 +418,17 @@ export const promptAiSdkStructured = async function <T>(options: {
     return {} as T
   }
   const startTime = Date.now()
+
+  logger.info(
+    {
+      model: options.model,
+      agentId: options.agentId,
+      userInputId: options.userInputId,
+      userId: options.userId,
+    },
+    'Starting AI SDK structured request',
+  )
+
   let aiSDKModel = modelToAiSDKModel(options.model)
 
   const responsePromise = generateObject<z.ZodType<T>, 'object'>({

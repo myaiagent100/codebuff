@@ -101,6 +101,11 @@ export function createOpenRouter(
     process.env.LITELLM_BASE_URL ??
     'https://your-litellm-server.example.com/v1';
 
+  // Log baseURL in development mode
+  if (process.env.NEXT_PUBLIC_CB_ENVIRONMENT === 'dev') {
+    console.log('[OpenRouter Provider] Using baseURL:', baseURL);
+  }
+
   // we default to compatible, because strict breaks providers like Groq:
   const compatibility = options.compatibility ?? 'compatible';
 

@@ -25,13 +25,15 @@ export const withLoggerContext = <T>(
 }
 
 // Ensure debug directory exists for local environment
-const debugDir = path.join(__dirname, '../../../debug')
+// Use process.cwd() to reliably get backend directory since bun runs from backend/
+const debugDir = path.join(process.cwd(), 'debug')
 if (
   env.NEXT_PUBLIC_CB_ENVIRONMENT === 'dev' &&
   process.env.CODEBUFF_GITHUB_ACTIONS !== 'true'
 ) {
   try {
     mkdirSync(debugDir, { recursive: true })
+    console.log('[Logger] Debug directory:', debugDir)
   } catch (err) {
     console.error('Failed to create debug directory:', err)
   }
