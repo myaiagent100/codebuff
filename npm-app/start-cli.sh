@@ -9,4 +9,4 @@ export NEXT_PUBLIC_CODEBUFF_APP_URL=http://localhost:3000
 export NEXT_PUBLIC_SUPPORT_EMAIL=support@codebuff.com
 
 cd "$(dirname "$0")"
-/Users/mpolovov/.bun/bin/bun run src/index.ts "$@"
+/Users/mpolovov/.bun/bin/bun --env-file=../.env run src/index.ts "$@"
