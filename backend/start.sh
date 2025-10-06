@@ -43,4 +43,4 @@ fi
 # Start the backend server
 echo -e "${GREEN}🔧 Starting backend server...${NC}"
 cd "$SCRIPT_DIR"
-exec /Users/mpolovov/.bun/bin/bun --env-file="$ENV_FILE" src/index.ts
+exec bun --env-file="$ENV_FILE" src/index.ts
