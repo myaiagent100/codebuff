@@ -31,8 +31,8 @@ echo -e "${YELLOW}📊 Checking PostgreSQL...${NC}"
 if ! docker ps | grep -q manicode-db; then
     echo -e "${RED}❌ PostgreSQL is not running${NC}"
     echo -e "${YELLOW}Starting PostgreSQL with Docker Compose...${NC}"
-    cd "$PROJECT_ROOT"
-    docker compose up -d
+    COMPOSE_FILE="$PROJECT_ROOT/common/src/db/docker-compose.yml"
+    docker compose -f "$COMPOSE_FILE" up -d
     echo -e "${GREEN}✅ PostgreSQL started${NC}"
     echo -e "${YELLOW}⏳ Waiting 3 seconds for PostgreSQL to initialize...${NC}"
     sleep 3
